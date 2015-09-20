@@ -1,7 +1,7 @@
 SublimeLinter-contrib-eslint_d
 ================================
 
-[![Build Status](https://travis-ci.org/SublimeLinter/SublimeLinter-contrib-eslint_d.svg?branch=master)](https://travis-ci.org/SublimeLinter/SublimeLinter-contrib-eslint_d)
+[![Build Status](https://travis-ci.org/roadhump/SublimeLinter-contrib-eslint_d.svg?branch=master)](https://travis-ci.org/roadhump/SublimeLinter-contrib-eslint_d)
 
 This linter plugin for [SublimeLinter][docs] provides an interface to [eslint_d][linter-homepage]. It will be used with files that have the “JavaScript” syntax.
 
