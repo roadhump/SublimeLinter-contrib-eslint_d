@@ -20,7 +20,7 @@ class Eslint_d(NodeLinter):
 
     syntax = ('javascript', 'html', 'javascriptnext', 'javascript (babel)', 'javascript (jsx)', 'jsx-real')
     npm_name = 'eslint_d'
-    cmd = ('eslint_d', '@')
+    cmd = ('eslint_d', '--no-ignore', '--format', 'compact', '@')
     executable = None
     version_args = '--version'
     version_re = r'eslint_d v(?P<version>\d+\.\d+\.\d+)'
@@ -39,6 +39,8 @@ class Eslint_d(NodeLinter):
     selectors = {
         'html': 'source.js.embedded.html'
     }
+    tempfile_suffix = 'js'
+    config_file = ('--config', '.eslintrc', '~')
 
     def find_errors(self, output):
         """
