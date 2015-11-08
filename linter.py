@@ -10,6 +10,8 @@
 
 """This module exports the Eslint_d plugin class."""
 
+import sublime
+import os
 import re
 from SublimeLinter.lint import NodeLinter
 
@@ -20,7 +22,7 @@ class Eslint_d(NodeLinter):
 
     syntax = ('javascript', 'html', 'javascriptnext', 'javascript (babel)', 'javascript (jsx)', 'jsx-real')
     npm_name = 'eslint_d'
-    cmd = ('eslint_d', '--no-ignore', '--format', 'compact', '@')
+    cmd = ('eslint_d', '--no-ignore', '--format', 'compact', '--stdin', '--stdin-filename', '__RELATIVE_TO_FOLDER__')
     executable = None
     version_args = '--version'
     version_re = r'eslint_d v(?P<version>\d+\.\d+\.\d+)'
@@ -39,7 +41,6 @@ class Eslint_d(NodeLinter):
     selectors = {
         'html': 'source.js.embedded.html'
     }
-    tempfile_suffix = 'js'
     config_file = ('--config', '.eslintrc', '~')
 
     def find_errors(self, output):
@@ -59,3 +60,26 @@ class Eslint_d(NodeLinter):
             return [(match, 0, None, "Error", "", msg, None)]
 
         return super().find_errors(output)
+
+    def communicate(self, cmd, code=None):
+        """Run an external executable using stdin to pass code and return its output."""
+
+        if '__RELATIVE_TO_FOLDER__' in cmd:
+
+            relfilename = self.filename
+            window = self.view.window()
+
+            # can't get active folder, it will work only if there is one folder in project
+            if int(sublime.version()) >= 3080 and len(window.folders()) < 2:
+
+                vars = window.extract_variables()
+
+                if 'folder' in vars:
+                    relfilename = os.path.relpath(self.filename, vars['folder'])
+
+            cmd[cmd.index('__RELATIVE_TO_FOLDER__')] = relfilename
+
+        elif not code:
+            cmd.append(self.filename)
+
+        return super().communicate(cmd, code)
