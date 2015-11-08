@@ -15,12 +15,12 @@ Before using this plugin, you must ensure that `eslint_d` is installed on your s
 
 1. Install `eslint_d` by typing the following in a terminal:
    ```
-   npm install -g eslint_d
+   npm install -g eslint_d@>=2.3.0
    ```
    Or install `eslint_d` locally in your project folder (**you must have package.json file there**):
        ```
        npm init -f
-       npm install eslint_d
+       npm install eslint_d@>=2.3.0
        ```
 
 1. If you are using `nvm` and `zsh`, ensure that the line to load `nvm` is in `.zshenv` and not `.zshrc`.
@@ -28,7 +28,7 @@ Before using this plugin, you must ensure that `eslint_d` is installed on your s
 1. If you are using `zsh` and `oh-my-zsh`, do not load the `nvm` plugin for `oh-my-zsh`.
 
 
-**Note:** This plugin requires `eslint_d` 2.1.0 or later.
+**Note:** This plugin requires `eslint_d` 2.3.0 or later.
 
 ### Linter configuration
 In order for `eslint_d` to be executed by SublimeLinter, you must ensure that its path is available to SublimeLinter. Before going any further, please read and follow the steps in [“Finding a linter executable”](http://sublimelinter.readthedocs.org/en/latest/troubleshooting.html#finding-a-linter-executable) through “Validating your PATH” in the documentation.

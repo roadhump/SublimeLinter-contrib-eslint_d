@@ -26,7 +26,7 @@ class Eslint_d(NodeLinter):
     executable = None
     version_args = '--version'
     version_re = r'eslint_d v(?P<version>\d+\.\d+\.\d+)'
-    version_requirement = '>= 2.1.0'
+    version_requirement = '>= 2.3.0'
     regex = (
         r'^.+?: line (?P<line>\d+), col (?P<col>\d+), '
         r'(?:(?P<error>Error)|(?P<warning>Warning)) - '
