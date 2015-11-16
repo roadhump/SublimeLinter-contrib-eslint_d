@@ -15,12 +15,12 @@ Before using this plugin, you must ensure that `eslint_d` is installed on your s
 
 1. Install `eslint_d` by typing the following in a terminal:
    ```
-   npm install -g eslint_d@>=2.3.1
+   npm install -g eslint_d
    ```
    Or install `eslint_d` locally in your project folder (**you must have package.json file there**):
        ```
        npm init -f
-       npm install eslint_d@>=2.3.1
+       npm install eslint_d
        ```
 
 1. If you are using `nvm` and `zsh`, ensure that the line to load `nvm` is in `.zshenv` and not `.zshrc`.
