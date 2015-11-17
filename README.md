@@ -49,6 +49,10 @@ For general information on how SublimeLinter works with settings, please see [Se
 
 You can configure `eslint` options in the way you would from the command line, with `.eslintrc` files. For more information, see the [eslint docs](https://github.com/nzakas/eslint/wiki).
 
+## FAQ and Troubleshooting
+
+This plugin is almost similar to [SublimeLinter-contrib-eslint](https://github.com/roadhump/SublimeLinter-eslint#faq-and-troubleshooting), so you can use its [documentation](https://github.com/roadhump/SublimeLinter-eslint#faq-and-troubleshooting), just replace `eslint` with `eslint_d`.
+
 ## Contributing
 If you would like to contribute enhancements or fixes, please do the following:
 
