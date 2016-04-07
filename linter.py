@@ -22,7 +22,7 @@ class Eslint_d(NodeLinter):
 
     syntax = ('javascript', 'html', 'javascriptnext', 'javascript (babel)', 'javascript (jsx)', 'jsx-real')
     npm_name = 'eslint_d'
-    cmd = ('eslint_d', '--format', 'compact', '--stdin', '--stdin-filename', '__RELATIVE_TO_FOLDER__')
+    cmd = ('eslint_d', '--format', 'compact', '--stdin', '--stdin-filename', '@')
     executable = None
     version_args = '--version'
     version_re = r'eslint_d v(?P<version>\d+\.\d+\.\d+)'
